@@ -1,0 +1,114 @@
+.bar--top {
+  @include box-shadow;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: $white;
+  text-align: center;
+  height: 3rem;
+  z-index: 3;
+  transition: top $trns-duration;
+  a {
+    text-decoration: none;
+  }
+  h2 {
+    display: inline-block;
+    margin: 0;
+    color: $color-text;
+    line-height: 3rem;
+    position: relative;
+    z-index: 3;
+    &::before {
+      @include hover-dot($z: -2);
+      top: 0; left: 0; bottom: 0; right: 0;
+    }
+    &:hover::before {
+      transform: scale(1);
+    }
+  }
+}
+
+%nav__toggle__span {
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background: $color-text;
+}
+
+.nav__toggle {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  right: 5%;
+  width: 40px;
+  height: 12px;
+  z-index: 11;
+  padding: 1.125rem 0;
+  transition: top $trns-duration;
+  @include mq (md) {
+    right: 1.125rem;
+  }
+  .one {
+    @extend %nav__toggle__span;
+  }
+
+  .two {
+    @extend %nav__toggle__span;
+    margin-top: 12px;
+  }
+}
+
+nav, .nav {
+  text-align: center;
+  @include m(absolute) {
+    position:fixed;
+    width: 100%;
+    top: -100vh;
+    height: 100vh;
+    background-color: $white;
+    z-index: 10;
+  }
+  a {
+    color: $color-text;
+    &:hover {
+      text-decoration: none;
+    }
+    li::before {
+      @include hover-dot((100vh - 18vh) / 9, -2);
+      top: 0; left: 0; bottom: 0; right: 0;
+      @include mq(lg) {
+        width: (100vh - 12vh) / 12;
+        height: (100vh - 12vh) / 12;
+      }
+    }
+    &:hover li::before {
+      transform: scale(1);
+    }
+  }
+  ul {
+    margin: 9vh 0;
+    padding-left: 0;
+    @include mq(lg) {
+      margin: 6vh 0;
+    }
+  }
+  li {
+    position: relative;
+    // fall-back
+    font-size: 2rem;
+    line-height: 3rem;
+    // proper
+    font-size: (100vh - 18vh) / 12;
+    line-height: (100vh - 18vh) / 9;
+    list-style: none;
+    font-family: $font-family--secondary;
+    @include mq(lg) {
+      // fall-back
+      font-size: 2.75rem;
+      line-height: 3.5rem;
+      // proper
+      font-size: (100vh - 12vh) / 12;
+      line-height: (100vh - 12vh) / 9;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+
+// ==========================================================================
+// Global Config
+// ==========================================================================
+
+// Descriptive Base Colors (material.io color palette)
+
+$white   : #fff;
+$black   : #000;
+
+$blue-300: #64B5F6;
+$teal-300: #4DB6AC;
+$red-200 : #EF9A9A;
+
+// Color Palette Modifiers
+
+$color-palettes: (
+  grey: (
+    xxxx-light : #fafafa,
+    xxx-light  : #f5f5f5,
+    xx-light   : #EEEEEE,
+    x-light    : #E0E0E0,
+    light      : #BDBDBD,
+    base       : #9E9E9E,
+    dark       : #757575,
+    x-dark     : #616161
+  ),
+  black: (
+    shadow     : rgba(0,0,0,0.05),
+    shadow-dark: rgba(0,0,0,0.9),
+    light      : lighten($black, 15%),
+    base       : lighten($black, 5%),
+    dark       : $black
+  )
+);
+
+$shadow: 0px 2px 6px palette($black, shadow);
+
+// Color Usage
+
+$color-primary  : $blue-300;
+$color-secondary: $teal-300;
+$color-text     : palette(black, light);
+$color-alert    : $red-200;
+
+// Text
+$font-family--primary    : 'lato', Arial, Helvetica, sans-serif;
+$font-family--secondary  : 'bebaskai', 'Times New Roman', Times, serif;
+$font-family--title      : 'montserrat bold', Georgia, Times, serif;
+
+// Font Weights
+
+$font-weight--thin       : 100;
+$font-weight--light      : 300;
+$font-weight--regular    : 400;
+$font-weight--semi-bold  : 600;
+$font-weight--bold       : 700;
+$font-weight--ultra-bold : 900;
+
+// Font Sizes
+
+$base__font-size--sm: 0.95rem;
+$base__font-size    : 1rem;
+$base__font-size--lg: 1.25rem;
+$base__font-size--xl: 1.75rem;
+
+$line-font: 1.4;
+
+$base__line--sm: ($base__font-size--sm * $line-font);
+$base__line    : ($base__font-size * $line-font);
+$base__line--lg: ($base__font-size--lg * $line-font);
+$base__line--xl: ($base__font-size--xl * $line-font);
+$letter-space  : 1px;
+
+// Border radius
+
+$br--default: 0.6rem;
+$br--round  : 50%;
+
+$base__space--lg: 2rem;
+$base__space--md: ($base__space--lg / 2);
+$base__space--sm: ($base__space--lg / 4);
+$base__space--negative: ($base__space--lg / -1);
+
+// Transitions
+
+$trns-duration  : .4s;
+
+$max-width      : 780px;
+$max-width-large: 980px;
+
+//braekpoints
+$break-xs: 45.9em;
+$break-sm: 46em;
+$break-md: 61em;
+$break-lg: 71em;
+
+$breakpoints-mq: (
+  'xs': $break-xs,
+  'sm': $break-sm,
+  'md': $break-md,
+  'lg': $break-lg,
+);
+
+// Set the number of columns you want to use on your layout.
+$grid-columns: 12 !default;
+// Set the gutter between columns.
+$gutter-width: 1rem !default;
+// Set a margin for the container sides.
+$outer-margin: 2rem !default;
+// Create or remove breakpoints for your project
+// Syntax:
+// name SIZErem,
+$breakpoints:
+  sm $break-sm 46rem,
+  md $break-md 61rem,
+  lg $break-lg 71rem !default;
+
+$flexboxgrid-max-width: $max-width !default;

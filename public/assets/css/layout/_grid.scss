@@ -1,0 +1,13 @@
+@include mq(lg) {
+  /* grid and alignment*/
+  .flex-grid {
+    display: flex;
+    justify-content: space-between;
+
+    @for $i from 2 through 4 {
+      .col-#{$i} {
+        width: ((100% / $i) - $gutter);
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+Front-end
+
+javascript,
+jquery,
+ajax,
+npm,
+node workflow
+sass,
+Flexbox Grid
+bootstrap,
+fouandation
+ui & ux
+
+Back-end
+
+php
+sql
+wordpress
+local development
+composer
+MVC
+slim
+laravel
+REST api
+twig template
+blade
+pug - svg
+github
+
+Online marketing platforms
+
+Facebook ads
+Google AdWords - svg
+YouTube
+E-commerce platform - svg
+piano editoriale, content curation - svg
+SEO - svg
+
+Altre skills
+
+Pacchetto adobe - svg
+Pacchetto office
+Video editing - svg
+os - svg

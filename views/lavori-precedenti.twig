@@ -1,0 +1,8 @@
+{% extends 'layout/app.twig' %}
+
+{% block content %}
+    {% for lavoro in lavori %}
+      {{ lavoro.renderItem("lavori-precedenti", is_first)|raw }}
+      {% set is_first = false %}
+    {% endfor %}
+{% endblock %}

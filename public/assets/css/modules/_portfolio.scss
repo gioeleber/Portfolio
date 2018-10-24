@@ -1,0 +1,40 @@
+.portfolio {
+  width: 100%;
+  height: 14rem;
+  position: relative;
+  margin-top: 4rem;
+
+  @include e(img) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 12rem;
+  }
+
+  @include e(header) {
+    @extend %header;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 33%;
+    color: $white;
+  }
+
+  a {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50%;
+  }
+
+  @include e (text) {
+    padding-top: 2rem;
+  };
+}

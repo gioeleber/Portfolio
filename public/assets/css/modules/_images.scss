@@ -1,0 +1,89 @@
+p,i {
+	img {
+		position: relative;
+		vertical-align: bottom;
+		line-height: 1.5rem;
+		width: 1.5rem;
+		height: 1.5rem;
+		margin: 0 .5rem 0 0;
+		z-index: 2;
+	}
+}
+
+img {
+  width: 100%;
+  button &,
+  a.button--cookie & {
+    width: 0.75rem;
+    margin-right: 0.5rem;
+  }
+}
+
+//img swipe
+.icon__swipe {
+  // on hover of anchor
+  &:hover img.top {
+    // img on top on hover disappear
+    opacity:0;
+  }
+}
+
+p:hover span.img--hover::before, {
+  transform: scale(1);
+}
+
+.img {
+  @include m (hover) {
+    position: relative;
+    &::before {
+      @include hover-dot();
+      top: 0; bottom: 0; right: 0.125rem;
+    }
+    &:hover::before {
+      transform: scale(1);
+    }
+  }
+
+	@include m (book) {
+		height: 7.5rem;
+		width: auto;
+	}
+
+  @include m (icon) {
+    width: 2.5rem;
+  }
+  @include m (circle) {
+    width: 45%;
+    max-width: 12rem;
+    border-radius: 50%;
+    // border: 1px solid palette(grey, xx-light);
+    box-shadow: 1px -11px rgba(100,181,246,0.5),
+                13px 3px rgba(77,182,172,0.5);
+  }
+  // img swipe
+  @include m (swipe) {
+    position: relative;
+
+    &:hover img.top {
+      // img on top on hover disappear
+      opacity:0;
+    }
+
+    img.bottom {
+      position: absolute;
+      left:0;
+      z-index: -2;
+    }
+
+    img.top {
+      -webkit-transition: opacity $trns-duration ease-in-out;
+      -moz-transition: opacity $trns-duration  ease-in-out;
+      -o-transition: opacity $trns-duration ease-in-out;
+      transition: opacity $trns-duration ease-in-out;
+    }
+  }
+  @include m(button) {
+    width: 1rem;
+    margin-right: 0.5rem;
+  }
+}

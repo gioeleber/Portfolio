@@ -1,0 +1,64 @@
+
+// element
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+//mixin
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: 0px 1px 9px 3px palette(black, shadow);
+}
+
+//set a backgrpund image
+@mixin backgroundimage ($image, $ext) {
+  background-image: url("../img/#{$image}.#{$ext}");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+//center a div
+@mixin center($max-w, $t-margin, $b-margin, $w: 90%) {
+  width: $w;
+  max-width: $max-w;
+  margin: $t-margin auto $b-margin;
+}
+
+// background dot on hover
+@mixin hover-dot($w: 2.25rem, $z: 1) {
+  content: "";
+  position: absolute;
+  display: block;
+  margin: auto;
+  background: $color-primary;
+  border-radius: 50%;
+  width : $w;
+  height: $w;
+  z-index: $z;
+  transform: scale(0);
+  transition: transform $trns-duration ease-in-out;
+}
+
+// media queries
+@mixin mq($break) {
+  $value: map-get($breakpoints-mq, $break);
+
+
+  @if $value < $break-sm {
+    @media (max-width: $value) {
+      @content;
+    }
+  }
+  @else {
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+}

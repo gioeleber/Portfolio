@@ -1,0 +1,21 @@
+footer {
+  background: $white;
+  @include box-shadow;
+  .row {
+    @include center($max-width, 0, 0);
+    padding: 2rem 0 0;
+  }
+
+  a {
+    color: $color-text;
+  }
+
+  i, p {
+    display: block;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .title {
+    margin-bottom: 1.5rem;
+  }
+}

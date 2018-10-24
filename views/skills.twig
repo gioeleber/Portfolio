@@ -1,0 +1,17 @@
+{% extends 'layout/app.twig' %}
+
+{% block content %}
+
+{# Loop thought titles #}
+{% for section in sections %}
+  {{ section.renderTitle()|raw }}
+  {# Loop thought Skills #}
+  {% for skill in skills %}
+    {# render only if has the right section class #}
+    {% if section.section_class == skill.section %}
+      {{ skill.renderItem("skills", is_first)|raw }}
+      {% set is_first = false %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% endblock %}

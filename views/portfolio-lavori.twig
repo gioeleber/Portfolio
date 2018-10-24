@@ -1,0 +1,7 @@
+{% extends 'layout/app.twig' %}
+
+{% block content %}
+  {% for portfolio_item in portfolio %}
+    {{ portfolio_item.renderPortfolio()|raw }}
+  {% endfor %}
+{% endblock %}

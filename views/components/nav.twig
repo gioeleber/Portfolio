@@ -1,0 +1,22 @@
+{% if not is_current_path('home') %}
+  <!-- nav toggle -->
+  <div class="nav__toggle">
+    <span class="one"></span>
+    <span class="two"></span>
+  </div>
+{% endif %}
+
+<!-- navigator -->
+<nav class="{{ mobileClass }}">
+  <ul>
+    <a href="{{ path_for('suDiMe') }}"><li>su di me</li></a>
+    <a href="{{ path_for('softSkills') }}"><li>soft skills</li></a>
+    <a href="{{ path_for('skills') }}"><li>skills</li></a>
+    <a href="{{ path_for('lavoriPrecedenti') }}"><li>lavori precedenti</li></a>
+    <a href="{{ path_for('istruzione') }}"><li>istruzione</li></a>
+    <a href="{{ path_for('portfolioLavori') }}"><li>portfolio lavori</li></a>
+    <a href="{{ path_for('altriInteressi') }}"><li>altri interessi</li></a>
+    <a href="{{ path_for('libri') }}"><li>libri</li></a>
+    <a href="{{ path_for('curriculumVitae') }}"><li>curriculum vitae</li></a>
+  </ul>
+</nav>

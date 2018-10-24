@@ -1,0 +1,216 @@
+
+// ==========================================================================
+// Base Styles
+// ==========================================================================
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+  font-size: $base__font-size;
+  font-family: $font-family--primary;
+	color: $color-text;
+}
+
+strong, b {
+	font-weight: $font-weight--bold;
+}
+
+%header {
+	font-family: $font-family--title;
+	font-weight: $font-weight--bold;
+	font-size: 2rem;
+	line-height: 2.75rem;
+	@include mq (md) {
+		font-size: 3rem;
+		line-height: 4rem;
+	}
+}
+
+h1, h2 {
+	@extend %header;
+}
+
+h2 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	@include mq (md) {
+		font-size: 2rem;
+		line-height: 2.5rem;
+	}
+}
+
+.title, h2.title, h3 ,h4 ,h5 ,h6 {
+	color: $color-primary;
+  font-family: $font-family--secondary;
+  font-weight: $font-weight--regular;
+	font-size: 1.6rem;
+	@include mq (md) {
+		font-size: 1.8rem;
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+	@include m(background) {
+		position: relative;
+		@extend .title;
+		margin: 0;
+		&::before {
+			position: absolute;
+			color: palette(grey, xx-light);
+			z-index: -1;
+			font-size: 3rem;
+			top: .33rem;
+			left: -.33rem;
+			@include mq (md) {
+				top: 0.9rem;
+				left: -.75rem;
+				font-size: 5.25rem;
+			}
+		}
+	}
+}
+
+a {
+	color: $color-primary;
+	text-decoration: none;
+}
+
+p {
+	line-height: 1.4rem;
+  strong {
+    font-weight: $font-weight--bold;
+  }
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
+hr {
+  border: 0;
+  height: 2px;
+	width: 66%;
+  margin: 1.5rem 0 .5rem;
+	background-color: $color-text;
+	color: $color-text;
+}
+
+input[type=checkbox] {
+  margin: 0.5rem 0;
+}
+
+a {
+	&:hover {
+		text-decoration: none;
+	}
+	.arrow {
+		color: $color-text;
+		&::before {
+	    content: url('/assets/img/triagle-down.png');
+	    margin-right: 0.5em;
+			display: inline-block;
+			vertical-align: text-bottom;
+			animation: arrow 2s infinite;
+	  }
+		@include m (white){
+			color: $white;
+			&::before {
+		    content: url('/assets/img/triagle-down--white.png');
+		    margin-right: 0.5em;
+				display: inline-block;
+				vertical-align: text-bottom;
+				animation: arrow 2s infinite;
+		  }
+		}
+	}
+}
+
+@keyframes arrow {
+	0%   {transform: scale(1);}
+	70%  {transform: scale(1);}
+	85%  {transform: scale(1.33);}
+	10%  {transform: scale(1);}
+}
+
+
+.big {
+  font-size: $base__font-size--lg;
+  line-height: $base__line--lg;
+}
+
+.color {
+	&--p,
+	&--li,
+	&--b,
+	&--strong,
+	&--span {
+	  color: $color-primary;
+	}
+}
+
+.icon__swipe {
+	line-height: 3rem;
+}
+
+.hide {
+	@include m(sm) {
+		display: none;
+		@include mq (md) {
+			display: initial;
+		}
+	}
+}
+
+.show {
+	@include m(sm) {
+		display: initial;
+		@include mq (md) {
+			display: none;
+		}
+	}
+}
+
+.margin {
+	&-right--sm {
+		margin-right: $base__space--sm;
+	}
+	&-right--md {
+		margin-right: $base__space--md;
+	}
+	&-right--lg {
+		margin-right: $base__space--lg;
+	}
+	&-left--sm {
+		margin-left: $base__space--sm;
+	}
+	&-left--md {
+		margin-left: $base__space--md;
+	}
+	&-left--lg {
+		margin-left: $base__space--lg;
+	}
+	&-top--sm {
+		margin-top: $base__space--sm;
+	}
+	&-top--md {
+		margin-top: $base__space--md;
+	}
+	&-top--lg {
+		margin-top: $base__space--lg;
+	}
+	&-top--negative {
+		margin-top: $base__space--negative;
+	}
+	&-bottom--sm {
+		margin-bottom: $base__space--sm;
+	}
+	&-bottom--md {
+		margin-bottom: $base__space--md;
+	}
+	&-bottom--lg {
+		margin-bottom: $base__space--lg;
+	}
+}

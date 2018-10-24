@@ -1,0 +1,18 @@
+input[type=submit],
+.btn {
+  @extend %input--pesticide;
+  display: inline-block;
+  background: $white;
+  color: $color-text;
+  font-weight: bold;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid $color-primary;
+  transition: $trns-duration;
+  &:hover {
+    text-decoration: none;
+    background: $color-primary;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid $color-primary;
+    color: $white;
+  }
+}

@@ -1,0 +1,47 @@
+
+.align {
+  &-left,
+  &-left h1,
+  &-left h2,
+  &-left h3 {
+    text-align: left;
+  }
+  &-center,
+  &-center h1,
+  &-center h2,
+  &-center h3 {
+    text-align: center;
+  }
+
+  &-right,
+  &-right h1,
+  &-right h2,
+  &-right h3 {
+    text-align: right;
+  }
+}
+
+
+@include mq(lg) {
+  .align {
+    &-left--lg,
+    &-left--lg h1,
+    &-left--lg h2,
+    &-left--lg h3 {
+      text-align: left;
+    }
+    &-center--lg,
+    &-center--lg h1,
+    &-center--lg h2,
+    &-center--lg h3 {
+      text-align: center;
+    }
+
+    &-right--lg,
+    &-right--lg h1,
+    &-right--lg h2,
+    &-right--lg h3 {
+      text-align: right;
+    }
+  }
+}

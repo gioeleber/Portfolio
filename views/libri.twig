@@ -1,0 +1,9 @@
+{% extends 'layout/app.twig' %}
+
+{% block content %}
+    <div class="row">
+      {% for libro in libri %}
+        {{ libro.renderItem("libri")|raw }}
+      {% endfor %}
+    </div>
+{% endblock %}

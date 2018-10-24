@@ -1,0 +1,115 @@
+<!DOCTYPE html >
+<html lang="it" dir="ltr">
+  <head>
+    <!-- meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- favicon -->
+    <link rel="icon" href="/assets/img/gioelebernardi-favicon.png" />
+    <!-- minified sass stylesheet -->
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+    <!-- title -->
+    <title>Gioele Bernardi | {{ title }}</title>
+    <!-- cookie banner -->
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="de28e4e9-d1f8-45a1-86a7-b6aca3e97e0a" type="text/javascript" async></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107177331-2"></script>
+    <script src="/assets/js/analytics.js" type="text/plain" data-cookieconsent="statistics"></script>
+  </head>
+
+{% if is_current_path('home') %}
+  {% set bodyClass = "" %}
+  {% set mainClass = "cover" %}
+{% else %}
+  {% set bodyClass = "bg" %}
+  {% set mainClass = "wrapper" %}
+{% endif %}
+
+  <body class="{{ bodyClass }}">
+
+{% if not is_current_path('home') %}
+    {% include "components/nav.twig"  with {'mobileClass': 'nav--absolute'} %}
+    <span class="dot--1"></span>
+    <span class="dot--2"></span>
+    <div class="bar--top">
+      <a href="/"><h2 class="title">gioele bernardi</h2></a>
+    </div>
+{% endif %}
+
+  <main class="{{ mainClass }}">
+
+{% if not is_current_path('home') %}
+  <h1>{{ title }}</h1>
+{% endif %}
+
+  <!-- include the main content block -->
+  {% block content %}{% endblock %}
+
+{% if is_current_path('home') %}
+  {% include "components/nav.twig"  with {'mobileClass': ''} %}
+{% endif %}
+
+  </main>
+
+{% if not is_current_path('home') %}
+  <!-- start of footer block -->
+  <footer>
+    <div class="row">
+      <div class="col-xs-12 col-sm-5">
+        <!-- social links -->
+        <p class="title">contattami</p>
+        <i class="social">
+          <a href="https://www.facebook.com/Gioele.Bernardi"><span class="img--hover"><img src="/assets/img/icon-facebook.svg" alt="facebook profile"></span></a>
+          <a href="https://www.linkedin.com/in/gioele-bernardi-25079893/"><span class="img--hover"><img src="/assets/img/icon-linkedin.svg" alt="linkedin profile"></span></a>
+          <a href="https://github.com/gioeleber?tab=repositories"><span class="img--hover"><img src="/assets/img/icon-github.svg" alt="github profile"></span></a>
+        </i>
+
+        <!-- email contact -->
+        <a href="mailto:info@gioelebernardi.it">
+          <p>
+            <span class="img--hover"><img src="/assets/img/icon-mail.svg" alt="indirizzo email"></span>
+            info@gioelebernardi.it
+          </p>
+        </a>
+
+        <!-- flag to change language -->
+        <!-- <p class="title">lingua</p>
+        <i>
+          <a href="#"><span class="img--hover"><img src="/assets/img/it-flag.png"></span></a>
+          <a href="#"><span class="img--hover"><img src="/assets/img/uk-flag.png"></span></a>
+        </i> -->
+      </div>
+
+      <!-- contact form -->
+      <div class="col-xs-12 col-sm-offset-2 col-sm-5">
+        <p class="title">scrivimi</p>
+        <div class="form-message"></div>
+        <form class="margin-bottom--md" action="/assests/inc/phpmailer.php" method="post">
+          <input id="email" class="form__input" type="email" name="email" placeholder="Scrivi la tua email" value="" required>
+
+          <input id="phone" class="input--hidden" type="number" name="phone" placeholder="Scrivi il tuo numero">
+
+          <input id="url" class="input--hidden" type="text" name="url" placeholder="url" value="{{ current_path() }}">
+          <br />
+
+          <textarea id="message" class="form__textarea" name="message" placeholder="Scrivi il messaggio" maxlength="1000" minlength="12" required></textarea>
+          <br />
+
+          <input class="margin-bottom-md" type="submit" name="" value="Invia">
+        </form>
+      </div>
+      <p class='text--black'>© Gioele Bernardi {{ "now"|date("Y") }} - <a href="/privacy-policy"><b>Privacy policy</b></a> - <a href="/cookie-policy"><b>Cookie policy</b></a> </p>
+    </div>
+  </footer>
+{% endif %}
+
+  <!-- javascripts -->
+  <script src="/assets/js/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  <script src="/assets/js/greensock-animation.js" type="text/javascript"></script>
+  <script src="/assets/js/jquery-validate.min.js" type="text/javascript"></script>
+  <script src="/assets/js/main.js" type="text/javascript"></script>
+  </body>
+</html>
